@@ -1,20 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:avatar_glow/avatar_glow.dart';
-import 'package:cupertino_icons/cupertino_icons.dart';
-import 'package:provider/provider.dart';
-import 'package:highlight_text/highlight_text.dart';
-import 'package:speech_to_text/speech_to_text.dart';
-import 'package:http/http.dart';
-// import 'package:assets_audio_player/assets_audio_player.dart';
+import 'package:get/get.dart';
 
-class Translate extends StatefulWidget {
-  const Translate({Key? key}) : super(key: key);
+class Translatevoice extends StatefulWidget {
+  const Translatevoice({Key? key}) : super(key: key);
 
   @override
-  _TranslateState createState() => _TranslateState();
+  _TranslatevoiceState createState() => _TranslatevoiceState();
 }
 
-class _TranslateState extends State<Translate> {
+class _TranslatevoiceState extends State<Translatevoice> {
   final maxLines = 4;
   @override
   Widget build(BuildContext context) {
@@ -62,7 +56,7 @@ class _TranslateState extends State<Translate> {
           ),
           Container(
             width: 480,
-            height: 280,
+            height: 240,
             color: Colors.white,
             child: Column(
               children: [
@@ -77,7 +71,7 @@ class _TranslateState extends State<Translate> {
                       ),
                       focusedBorder: UnderlineInputBorder(
                           borderSide: BorderSide(color: Colors.white)),
-                      hintText: "แตะเพื่อพิมพ์คำ",
+                      hintText: "หลังปวดรักษาอย่างไร",
                       fillColor: Colors.white,
                       filled: true,
                     ),
@@ -89,7 +83,6 @@ class _TranslateState extends State<Translate> {
                   },
                   child: Container(
                     width: 100,
-                    height: 80,
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
@@ -103,12 +96,9 @@ class _TranslateState extends State<Translate> {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.only(right: 280, top: 10),
-            child: Text('คำที่ตรงกัน'),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(left: 25),
+            padding: const EdgeInsets.only(top: 20),
             child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 RaisedButton(
                   onPressed: () {},
@@ -117,19 +107,27 @@ class _TranslateState extends State<Translate> {
                       borderRadius: BorderRadius.circular(10)),
                   child: Text("หลังปวดรักษาอย่างไร"),
                 ),
-                SizedBox(
-                  width: 10,
-                ),
-                RaisedButton(
-                  onPressed: () {},
-                  color: Colors.white,
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10)),
-                  child: Text("มีอาการเมื่อไหร่"),
-                ),
               ],
             ),
-          )
+          ),
+          SizedBox(
+            height: 15,
+          ),
+          MaterialButton(
+            onPressed: () {},
+            color: Colors.white,
+            textColor: Colors.black,
+            child: Icon(
+              Icons.volume_up,
+              size: 45,
+            ),
+            padding: EdgeInsets.all(30),
+            shape: CircleBorder(),
+          ),
+          SizedBox(
+            height: 20,
+          ),
+          Text('กดฟังซ้ำ'),
         ],
       ),
       drawer: Drawer(
