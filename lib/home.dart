@@ -32,30 +32,33 @@ class _HomeState extends State<Home> {
         body: Container(
       width: 480,
       height: 900,
-      color: Colors.red[200],
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Image.asset(
-            'assets/images/logo.png',
-            fit: BoxFit.fitHeight,
-            scale: 2.0,
-          ),
-          SizedBox(
-            height: 15,
-          ),
-          Text(
-            'ภาษากระเหรี่ยงสำหรับกายภาพ',
-            style: TextStyle(
-              color: Colors.white,
-              fontSize: 20,
-              fontWeight: FontWeight.bold,
+      color: Colors.teal[600],
+      child: Padding(
+        padding: const EdgeInsets.only(top: 200),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Image.asset(
+              'assets/images/logo.png',
+              fit: BoxFit.fitHeight,
+              scale: 4.0,
             ),
-          ),
-          SizedBox(
-            height: 55,
-          ),
-        ],
+            Padding(
+              padding: const EdgeInsets.only(top: 200),
+              child: Text(
+                'ภาษากระเหรี่ยงสำหรับกายภาพ',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 15,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+            SizedBox(
+              height: 55,
+            ),
+          ],
+        ),
       ),
     ));
   }

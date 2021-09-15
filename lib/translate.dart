@@ -15,154 +15,446 @@ class Translate extends StatefulWidget {
 }
 
 class _TranslateState extends State<Translate> {
-  final maxLines = 4;
+  final maxLines = 5;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.red[200],
-        elevation: 0,
-      ),
-      body: Column(
-        children: [
-          Container(
-            width: 480,
-            height: 60,
-            color: Colors.red[200],
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  'ไทย',
-                  style: TextStyle(
-                      fontSize: 15,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white),
-                ),
-                SizedBox(
-                  width: 90,
-                ),
-                Icon(
-                  Icons.compare_arrows,
-                  color: Colors.white,
-                  size: 30,
-                ),
-                SizedBox(
-                  width: 90,
-                ),
-                Text(
-                  'กระเหรี่ยง',
-                  style: TextStyle(
-                      fontSize: 15,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white),
-                )
-              ],
-            ),
-          ),
-          Container(
-            width: 480,
-            height: 280,
-            color: Colors.white,
-            child: Column(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: TextField(
-                    style: TextStyle(fontSize: 25),
-                    maxLines: maxLines,
-                    decoration: InputDecoration(
-                      enabledBorder: UnderlineInputBorder(
-                        borderSide: BorderSide(color: Colors.white),
-                      ),
-                      focusedBorder: UnderlineInputBorder(
-                          borderSide: BorderSide(color: Colors.white)),
-                      hintText: "แตะเพื่อพิมพ์คำ",
-                      fillColor: Colors.white,
-                      filled: true,
-                    ),
-                  ),
-                ),
-                GestureDetector(
-                  onTap: () {
-                    print('object');
-                  },
-                  child: Container(
-                    width: 100,
-                    height: 80,
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Icon(Icons.mic),
-                        Text('พูดเพื่อแปล'),
-                      ],
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(right: 280, top: 10),
-            child: Text('คำที่ตรงกัน'),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(left: 25),
-            child: Row(
-              children: [
-                RaisedButton(
-                  onPressed: () {},
-                  color: Colors.white,
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10)),
-                  child: Text("หลังปวดรักษาอย่างไร"),
-                ),
-                SizedBox(
-                  width: 10,
-                ),
-                RaisedButton(
-                  onPressed: () {},
-                  color: Colors.white,
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10)),
-                  child: Text("มีอาการเมื่อไหร่"),
-                ),
-              ],
-            ),
-          )
-        ],
-      ),
-      drawer: Drawer(
-        child: ListView(
+        backgroundColor: Colors.teal[400],
+        title: Row(
           children: [
-            const DrawerHeader(
-              decoration: BoxDecoration(
-                // color: Colors.pinkAccent
-                gradient: LinearGradient(
-                  begin: Alignment.topCenter,
-                  end: Alignment.bottomCenter,
-                  colors: [
-                    Color(0xFFFF6D91),
-                    Color(0xFFFF6D91),
-                  ],
-                ),
-              ),
-              child: Text(''),
+            Image.asset(
+              'assets/images/logo.png',
+              scale: 25,
             ),
-            ListTile(
-              leading: Icon(Icons.history),
-              title: const Text('ประวัติการแปล'),
+            SizedBox(
+              width: 10,
             ),
-            ListTile(
-              leading: Icon(Icons.settings),
-              title: const Text('การตั้งค่า'),
-            ),
-            ListTile(
-              leading: Icon(Icons.headset_mic_rounded),
-              title: const Text('แจ้งปัญหาและช่วยเหลือ'),
+            Text(
+              'ภาษากระเหรี่ยงสำหรับกายภาพ',
+              style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold),
             )
           ],
         ),
+        actions: <Widget>[
+          Padding(
+              padding: EdgeInsets.only(right: 20.0),
+              child: GestureDetector(
+                onTap: () {},
+                child: Icon(Icons.settings),
+              )),
+        ],
+        elevation: 0,
+      ),
+      body: ListView(
+        children: [
+          Column(
+            children: [
+              Container(
+                width: 480,
+                height: 40,
+                color: Colors.teal[400],
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      'ไทย',
+                      style: TextStyle(
+                          fontSize: 10,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white),
+                    ),
+                    SizedBox(
+                      width: 70,
+                    ),
+                    Icon(
+                      Icons.compare_arrows,
+                      color: Colors.white,
+                      size: 20,
+                    ),
+                    SizedBox(
+                      width: 70,
+                    ),
+                    Text(
+                      'กระเหรี่ยง',
+                      style: TextStyle(
+                          fontSize: 10,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white),
+                    )
+                  ],
+                ),
+              ),
+              SizedBox(
+                height: 15,
+              ),
+              Container(
+                width: 390,
+                height: 200,
+                decoration: BoxDecoration(
+                  color: Colors.teal[600],
+                  border: Border.all(color: Colors.teal),
+                  borderRadius: BorderRadius.all(Radius.circular(20)),
+                ),
+                child: Column(
+                  children: [
+                    Padding(
+                      padding:
+                          const EdgeInsets.only(left: 30, top: 10, right: 25),
+                      child: TextFormField(
+                        style: TextStyle(color: Colors.white),
+                        maxLines: maxLines,
+                        decoration: const InputDecoration(
+                            border: InputBorder.none,
+                            hintText: 'แตะเพื่อพิมพ์',
+                            hintStyle: TextStyle(color: Colors.white)),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(bottom: 2),
+                      child: Row(
+                        children: [
+                          SizedBox(
+                            width: 20,
+                          ),
+                          CircleAvatar(
+                            backgroundColor: Colors.teal[600],
+                            radius: 20,
+                            child: IconButton(
+                              padding: EdgeInsets.zero,
+                              icon: Icon(Icons.mic),
+                              color: Colors.white,
+                              onPressed: () {},
+                            ),
+                          ),
+                          Text(
+                            'กดเพื่อพูด',
+                            style: TextStyle(color: Colors.white),
+                          ),
+                          SizedBox(
+                            width: 150,
+                          ),
+                          ButtonTheme(
+                            minWidth: 20.0,
+                            height: 30.0,
+                            buttonColor: Colors.white,
+                            child: RaisedButton(
+                              onPressed: () {},
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                              child: Text(
+                                "แปลภาษา",
+                                style: TextStyle(
+                                    fontSize: 10, color: Colors.teal[600]),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(right: 280, top: 10),
+                child: Text(
+                  'คำที่แนะนำ',
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                ),
+              ),
+              Column(
+                children: [
+                  ButtonTheme(
+                    minWidth: 360.0,
+                    height: 40.0,
+                    buttonColor: Colors.teal[400],
+                    child: RaisedButton(
+                      onPressed: () {},
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      child: Text(
+                        "อาการที่มาหาหมอคืออะไร",
+                        style: TextStyle(fontSize: 13, color: Colors.white),
+                      ),
+                    ),
+                  ),
+                  ButtonTheme(
+                    minWidth: 360.0,
+                    height: 40.0,
+                    buttonColor: Colors.white,
+                    child: RaisedButton(
+                      onPressed: () {},
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      child: Text(
+                        "อธิบายเหตุการณ์ว่าเกิดขึ้นได้อย่างไร",
+                        style: TextStyle(fontSize: 13),
+                      ),
+                    ),
+                  ),
+                  ButtonTheme(
+                    minWidth: 360.0,
+                    height: 40.0,
+                    buttonColor: Colors.teal[400],
+                    child: RaisedButton(
+                      onPressed: () {},
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      child: Text(
+                        "กลางคืนเจ็บจนต้องตื่นมากินยาหรือทายาไหม",
+                        style: TextStyle(fontSize: 13, color: Colors.white),
+                      ),
+                    ),
+                  ),
+                  ButtonTheme(
+                    minWidth: 360.0,
+                    height: 40.0,
+                    buttonColor: Colors.white,
+                    child: RaisedButton(
+                      onPressed: () {},
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      child: Text(
+                        "อธิบายเหตุการณ์ว่าเกิดขึ้นได้อย่างไร",
+                        style: TextStyle(fontSize: 13),
+                      ),
+                    ),
+                  ),
+                  ButtonTheme(
+                    minWidth: 360.0,
+                    height: 40.0,
+                    buttonColor: Colors.teal[400],
+                    child: RaisedButton(
+                      onPressed: () {},
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      child: Text(
+                        "หลังปวดรักษาอย่างไร",
+                        style: TextStyle(fontSize: 13, color: Colors.white),
+                      ),
+                    ),
+                  ),
+                  ButtonTheme(
+                    minWidth: 360.0,
+                    height: 40.0,
+                    buttonColor: Colors.white,
+                    child: RaisedButton(
+                      onPressed: () {},
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      child: Text(
+                        "ตอนปวดทำอะไรอยู่",
+                        style: TextStyle(fontSize: 13),
+                      ),
+                    ),
+                  ),
+                  ButtonTheme(
+                    minWidth: 360.0,
+                    height: 40.0,
+                    buttonColor: Colors.teal[400],
+                    child: RaisedButton(
+                      onPressed: () {},
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      child: Text(
+                        "ตอนไหน",
+                        style: TextStyle(fontSize: 13, color: Colors.white),
+                      ),
+                    ),
+                  ),
+                  ButtonTheme(
+                    minWidth: 360.0,
+                    height: 40.0,
+                    buttonColor: Colors.white,
+                    child: RaisedButton(
+                      onPressed: () {},
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      child: Text(
+                        "ระดับความเจ็บปวดตอนแรก",
+                        style: TextStyle(fontSize: 13),
+                      ),
+                    ),
+                  ),
+                  ButtonTheme(
+                    minWidth: 360.0,
+                    height: 40.0,
+                    buttonColor: Colors.teal[400],
+                    child: RaisedButton(
+                      onPressed: () {},
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      child: Text(
+                        "หลังตื่นแล้วมีอาการไหม",
+                        style: TextStyle(fontSize: 13, color: Colors.white),
+                      ),
+                    ),
+                  ),
+                  ButtonTheme(
+                    minWidth: 360.0,
+                    height: 40.0,
+                    buttonColor: Colors.white,
+                    child: RaisedButton(
+                      onPressed: () {},
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      child: Text(
+                        "ตลอดทั้งวันเจ็บไหม",
+                        style: TextStyle(fontSize: 13),
+                      ),
+                    ),
+                  ),
+                  ButtonTheme(
+                    minWidth: 360.0,
+                    height: 40.0,
+                    buttonColor: Colors.teal[400],
+                    child: RaisedButton(
+                      onPressed: () {},
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      child: Text(
+                        "กลางคืนเจ็บจนต้องตื่นมากินยาหรือทายาไหม",
+                        style: TextStyle(fontSize: 13, color: Colors.white),
+                      ),
+                    ),
+                  ),
+                  ButtonTheme(
+                    minWidth: 360.0,
+                    height: 40.0,
+                    buttonColor: Colors.white,
+                    child: RaisedButton(
+                      onPressed: () {},
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      child: Text(
+                        "เคยเอ็กเรย์ไหม",
+                        style: TextStyle(fontSize: 13),
+                      ),
+                    ),
+                  ),
+                  ButtonTheme(
+                    minWidth: 360.0,
+                    height: 40.0,
+                    buttonColor: Colors.teal[400],
+                    child: RaisedButton(
+                      onPressed: () {},
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      child: Text(
+                        "เคยเกิดอุบัติเหตุไหม",
+                        style: TextStyle(fontSize: 13, color: Colors.white),
+                      ),
+                    ),
+                  ),
+                  ButtonTheme(
+                    minWidth: 360.0,
+                    height: 40.0,
+                    buttonColor: Colors.white,
+                    child: RaisedButton(
+                      onPressed: () {},
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      child: Text(
+                        "สูบบุหรี่ไหม",
+                        style: TextStyle(fontSize: 13),
+                      ),
+                    ),
+                  ),
+                  ButtonTheme(
+                    minWidth: 360.0,
+                    height: 40.0,
+                    buttonColor: Colors.teal[400],
+                    child: RaisedButton(
+                      onPressed: () {},
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      child: Text(
+                        "ดื่มสุราไหม",
+                        style: TextStyle(fontSize: 13, color: Colors.white),
+                      ),
+                    ),
+                  ),
+                  ButtonTheme(
+                    minWidth: 360.0,
+                    height: 40.0,
+                    buttonColor: Colors.white,
+                    child: RaisedButton(
+                      onPressed: () {},
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      child: Text(
+                        "เริ่มปวดเมื่อไหร่",
+                        style: TextStyle(fontSize: 13),
+                      ),
+                    ),
+                  ),
+                  ButtonTheme(
+                    minWidth: 360.0,
+                    height: 40.0,
+                    buttonColor: Colors.teal[400],
+                    child: RaisedButton(
+                      onPressed: () {},
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      child: Text(
+                        "ขอบัตรประชาชนหน่อย",
+                        style: TextStyle(fontSize: 13, color: Colors.white),
+                      ),
+                    ),
+                  ),
+                  ButtonTheme(
+                    minWidth: 360.0,
+                    height: 40.0,
+                    buttonColor: Colors.white,
+                    child: RaisedButton(
+                      onPressed: () {},
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      child: Text(
+                        "ทำท่าที่อยู่แล้วสบายที่สุด",
+                        style: TextStyle(fontSize: 13),
+                      ),
+                    ),
+                  ),
+                  ButtonTheme(
+                    minWidth: 360.0,
+                    height: 40.0,
+                    buttonColor: Colors.teal[400],
+                    child: RaisedButton(
+                      onPressed: () {},
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      child: Text(
+                        "ทำท่าไหนปวดมากที่สุด",
+                        style: TextStyle(fontSize: 13, color: Colors.white),
+                      ),
+                    ),
+                  ),
+                ],
+              )
+            ],
+          ),
+        ],
       ),
     );
   }
